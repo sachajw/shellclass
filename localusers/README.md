@@ -1,8 +1,8 @@
 # Local User Account creation
 
 ## Getting Started
-[Vagrant](https://www.vagrantup.com/downloads.html)
-[Virtual Box](https://www.virtualbox.org/wiki/Downloads)
+- [Vagrant](https://www.vagrantup.com/downloads.html)
+- [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
 
 ## Shell Script Requirements:
 
