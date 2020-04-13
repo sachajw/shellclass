@@ -8,7 +8,7 @@ echo "Your UID is ${UID}"
 
 # Display the username
 USER_NAME=$(id -un)
-#USER_NAME=`id -un` # another of way doing variables
+# USER_NAME=`id -un` # another of way doing variables
 echo "Your username is ${USER_NAME}"
 
 # Display if the user is the root user or not 
