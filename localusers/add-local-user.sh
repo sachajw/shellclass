@@ -48,6 +48,6 @@ passwd -e ${USER_NAME}
 
 # Display the username, password and host where the user was created.
 HOSTNAME=$(hostname)
-echo ${USER_NAME} ${PASSWORD} ${HOSTNAME}
+echo User account credentials ${USER_NAME} ${PASSWORD} ${HOSTNAME}
 
 
