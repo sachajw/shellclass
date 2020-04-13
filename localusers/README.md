@@ -1,5 +1,7 @@
 # Local User Account creation
 
+[Please check](https://github.com/sachajw/shellclass/blob/master/localusers/add-local-user-output.jpg) for successful account creation 
+
 ## Getting Started
 - [Vagrant](https://www.vagrantup.com/downloads.html)
 - [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
