@@ -11,7 +11,7 @@
 You think about what the shell script must do and how you would like it operate. You come up with
 the following list.
 The script:
-- Is named "add-local-user.sh".
+- Is named # "add-local-user.sh".
 - Enforces that it be executed with superuser (root) privileges. If the script is not executed with
 superuser privileges it will not attempt to create a user and returns an exit status of 1.
 - Prompts the person who executed the script to enter the username (login), the name for
