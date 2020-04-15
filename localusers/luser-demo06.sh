@@ -2,7 +2,7 @@
 
 # This script generates a random password for each user specified on the command line..
 
-# Display what the user typed ont he command line.
+# Display what the user typed on the command line.
 echo "You executed this command: ${0}"
 
 # Display the path and filename of the script.
@@ -13,7 +13,7 @@ echo "You used $(dirname ${0}) as the path to the $(basename ${0}) script."
 NUMBER_OF_PARAMETERS="${#}"
 echo "You supplied ${NUMBER_OF_PARAMETERS} argument(s) on the command line."
 
-# Make sure they at least supply one argument.
+# Make sure they supply at least one argument.
 if [[ "${NUMBER_OF_PARAMETERS}" -lt 1 ]]
 then
   echo "Usage: ${0} USER_NAME [USER_NAME]..."
