@@ -27,7 +27,7 @@ useradd -c "${COMMENT}" -m ${USER_NAME} # quotes are added so that people can ha
 # Did the useradd command succeed.
 if [[ "${?}" -ne 0 ]]
 then
-  echo 'The id command did not execute successfully.'
+  echo 'The useradd command did not execute successfully.'
   exit 1
 fi
 echo "Your username is ${USER_NAME}"
@@ -36,12 +36,18 @@ echo "Your username is ${USER_NAME}"
 echo ${PASSWORD} | passwd --stdin ${USER_NAME}
 
 # Did the password command succeed.
-
+if [[ "${?}" -ne 0 ]]
+then
+  echo 'The password command did not execute successfully.'
+  exit 1
+fi
+echo "Your password is ${PASSWORD}"
 
 # Force password change on first login.
 passwd -e ${USER_NAME}
 
 # Display the username, password and host where the user was created.
-
+HOSTNAME=$(hostname)
+echo User account credentials and hostname are the following: username: ${USER_NAME}, password: ${PASSWORD}, hostname: ${HOSTNAME}
 
 
