@@ -25,4 +25,4 @@ for USER_NAME in "${@}" # Jason showed "${*}" which put the output all on one li
 do
  PASSWORD=$(date +%s%N | sha256sum | head -c48)
  echo "${USER_NAME}: ${PASSWORD}"
- done
+ done 
