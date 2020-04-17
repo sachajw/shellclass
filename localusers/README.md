@@ -39,7 +39,6 @@ superuser privileges it will not attempt to create a user and returns an exit st
 supply an account name on the command line and returns an exit status of 1.
 - Uses the first argument provided on the command line as the username for the account. Any
 remaining arguments on the command line will be treated as the comment for the account.
-http://www.LinuxTrainingAcademy.com
 - Automatically generates a password for the new account.
 - Informs the user if the account was not able to be created for some reason. If the account is
 not created, the script is to return an exit status of 1.
