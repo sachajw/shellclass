@@ -1,8 +1,8 @@
 # Bash Scripting
 
 ## Getting Started
-- [Vagrant](https://www.vagrantup.com/downloads.html)
-- [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
+- Install Vbox first [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
+- Install Vagrant second [Vagrant](https://www.vagrantup.com/downloads.html)
 - Once you have install Vagrant and Virtual box, dive into the localusers folder
 - Type vagrant up
 - And Bash away
