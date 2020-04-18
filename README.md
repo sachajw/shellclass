@@ -3,6 +3,9 @@
 ## Getting Started
 - [Vagrant](https://www.vagrantup.com/downloads.html)
 - [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
+- Once you have install Vagrant and Virtual box, dive into the localusers folder
+- Type vagrant up
+- And Bash away
 
 ## Shell Script Requirements: Exercise 1
 
