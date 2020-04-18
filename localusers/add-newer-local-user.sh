@@ -34,7 +34,9 @@ COMMENT="${@}"
 PASSWORD=$(date +%s%N${RANDOM}${RANDOM}${RANDOM} | sha256sum | head -c64)
 
 # Create the user with the password.
-useradd -c "${COMMENT}" -m ${USER_NAME} &> /dev/null # quotes are added so that people can have spaces in their names
+useradd -c "${COMMENT}" -m ${USER_NAME} &> /dev/null 
+# quotes are added so that people can have spaces in their names 
+# all output sent to dev null so nothing is displayed to the screen 
 
 # Did the useradd command succeed.
 if [[ "${?}" -ne 0 ]]
