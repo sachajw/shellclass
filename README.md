@@ -7,6 +7,10 @@
 - Type vagrant up
 - And Bash away
 
+## Tips
+- Use shell builtins as it makes your scripts more portable.
+- If you find your code getting WET take out the umbrella and let your code DRY.
+
 ## Shell Script Requirements: Exercise 1
 
 You think about what the shell script must do and how you would like it operate. You come up with
