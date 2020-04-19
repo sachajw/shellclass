@@ -9,7 +9,7 @@
 
 ## Tips
 - Use shell builtins as it makes your scripts more portable.
-- If you find your code getting WET take out the umbrella and let your code DRY.
+- If you find your code WET take out the umbrella and let your code DRY.
 
 ## Shell Script Requirements: Exercise 1
 
