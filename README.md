@@ -102,7 +102,7 @@ exist.)
 status of 1.
 - Accepts a list of usernames as arguments. At least one username is required or the script will
 display a usage statement much like you would find in a man page and return an exit status of
-1. All messages associated with this event will be displayed on standard error.
+- All messages associated with this event will be displayed on standard error.
 - Refuses to disable or delete any accounts that have a UID less than 1,000.
 ○ Only system accounts should be modified by system administrators. Only allow the
 help desk team to change user accounts.
