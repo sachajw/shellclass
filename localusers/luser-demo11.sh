@@ -7,10 +7,10 @@
 # Verbose mode can be enabled with -v.
 
 usage () {
-  echo "Usage: ${0} [-vs] [-l LENGTH]" .&2
+  echo "Usage: ${0} [-vs] [-l LENGTH]" &>2
   echo 'Generate a random password.'
   echo ' -l LENGTH Specify the password length.'
-  echo ' -s        Append a special charactoer to the password.'
+  echo ' -s        Append a special character to the password.'
   echo ' -v        Increase verbosity.'
   exit 1
 }
@@ -44,10 +44,18 @@ do
       ;;
       #echo 'Invalid option.' >&2
       #exit 1
-esac
-done 
+  esac
+done
 
-echo 'Generating a password.'
+# Remove the options while leaving the remaining arguments.
+shift "$(( OPTIND - 1 ))"
+
+if [[ "${#}" -gt 0 ]]
+then
+  usage
+fi
+
+log 'Generating a password.'
 
 PASSWORD=$(date +%s%N${RANDOM}${RANDOM} | sha256sum | head -c ${LENGTH})
 
