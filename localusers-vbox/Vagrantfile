@@ -14,18 +14,12 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   
   # environment config
-  config.vm.box = "centos/7"
-  config.vm.provider "hyperv"
-  config.vm.network "public_network"
-  config.vm.synced_folder ".", "/vagrant", type: "smb"
-  config.vm.provider "hyperv" do |h|
-    h.enable_virtualization_extensions = true
-    h.linked_clone = true
-  end
-  
+    config.vm.box = "jasonc/centos7"
+    config.vm.provider "virtualbox"
+
   # vm config
-  config.vm.hostname = "localusers"
-  config.vm.network "private_network", ip: "10.9.8.7" # this does not work in hyperv only virtualbox
+    config.vm.hostname = "localusers-vbox"
+    config.vm.network "private_network", ip: "10.9.8.7" # this does not work in hyperv only virtualbox  
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
