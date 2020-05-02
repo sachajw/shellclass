@@ -1,0 +1,4 @@
+I love sed.
+This is line 2.
+I love sed with all of my heart..
+I love sed and sed loves me. Also, sed loves the cat.

@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Display 10 or more failed login attempts by IP address.
-
 LOG_FILE="${1}"
 LIMIT='10'
 
@@ -12,20 +11,17 @@ then
   exit 1
 fi
 
+# Display the CSV header
+echo 'Count,IP,Location'
+
 # Loop through the list of failed attempts and corresponding IP addresses
 grep Failed syslog-sample | awk '{print $(NF - 3)}' | sort | uniq -c | sort -nr | while read COUNT IP
 do
   # If the number of failed attempts is greater than the limit, display count, IP, and location
   if [[ "${COUNT}" -gt "${LIMIT}" ]]
   then
-    LOCATION=$(geoiplookup ${IP}) 
-    echo "${COUNT} ${IP} ${LOCATION}"
+    LOCATION=$(geoiplookup ${IP} | awk -F ', ' '{print $2}')
+    echo "${COUNT},${IP},${LOCATION}"
   fi
 done
 exit 0
-
-# Display the CSV header
-
-
-
-#cut -d '"' -f 2 ${LOG_FILE} | cut -d ' ' -f 2 | sort | uniq -c | sort -n | tail -3
