@@ -18,7 +18,7 @@ usage() {
     echo ' -v      Verbose mode. Displays the server name before executing COMMAND.' >&2
     exit 1
 }
-    
+
 # Make sure the script is not being executed with superuser privileges.
 if [[ "${UID}" -eq 0 ]]
 then
