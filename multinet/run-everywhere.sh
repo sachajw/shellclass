@@ -61,20 +61,20 @@ fi
 EXIT_STATUS='0'
 
 # Loop through the SERVER_LIST
-for SERVER in $(cat ${SERVER_FILE})
+for SERVER in $(cat ${SERVER_LIST})
 do
     if [[ "${VERBOSE}" = 'true' ]]
     then
         echo "${SERVER}"
     fi
 
-    SSH_CMD="ssh ${SSH_OPTIONS} ${SERVER} ${SUDO} ${COMMAND}"
+    SSH_COMMAND="ssh ${SSH_OPTIONS} ${SERVER} ${SUDO} ${COMMAND}"
     # If it's a dry run, don't execute anything, just echo it.
     if [[ "${DRY_RUN}" = 'true' ]]
     then
         echo "DRY RUN: ${SSH_COMMAND}"
     else
-        ${SSH_CMD}
+        ${SSH_COMMAND}
         SSH_EXIT_STATUS="${?}"
     
     # Capture any non-zero exit status from the SSH_COMMAND and report to the user.
