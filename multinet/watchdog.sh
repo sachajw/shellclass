@@ -12,7 +12,7 @@ LOG_FILE="/vagrant/watchdog.log.${HOSTNAME}"
 PATH="${PATH}:/usr/sbin"
 
 restart_service_not_running() {
-
+    then
     if [[ -n "${SERVICE_PID}" ]]
     # Restarts a given service if it is not running.
     # Requires SERVICE_NAME and START_SERVICE_COMMAND as arguments.
