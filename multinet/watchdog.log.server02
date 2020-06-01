@@ -262,3 +262,6 @@ May 03 +19:05:01 Checking service: rsyslogd
 May 03 +19:05:01 rsyslogd running as PID(s): 3670
 May 03 +19:05:01 Checking service: httpd
 May 03 +19:05:01 httpd running as PID(s): 5856 5855 5854 5853 5852 5851
+ Checking service: sshd
+ Checking service: rsyslogd
+ Checking service: httpd
