@@ -268,3 +268,6 @@ May 03 +19:05:01 httpd running as PID(s): 5856 5855 5854 5853 5852 5851
  Checking service: sshd
  Checking service: rsyslogd
  Checking service: httpd
+ Jun 01 +13:26:01 Checking service: sshd
+ Jun 01 +13:26:01 Checking service: rsyslogd
+ Jun 01 +13:26:02 Checking service: httpd
