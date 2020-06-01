@@ -14,7 +14,7 @@ PATH="${PATH}:/usr/sbin"
 restart_service_not_running() {
 
     if [[ -n "${SERVICE_PID}" ]]
-    then    # Restarts a given service if it is not running.
+    # Restarts a given service if it is not running.
     # Requires SERVICE_NAME and START_SERVICE_COMMAND as arguments.
     # Returns 0 if SERVICE_NAME is running, 1 if SERVICE_NAME was restarted.
 
@@ -22,7 +22,7 @@ restart_service_not_running() {
     shift
     local START_SERVICE_COMMAND="${@}"
 
-    local TIMESTAMP=$(date '+%b %d +%T')
+    local TIMESTAMP=$(date + '%b %d +%T')
     echo "${TIMESTAMP} Checking service: ${SERVICE_NAME}" >> ${LOG_FILE}
 
     local SERVICE_PID=$(pidof ${SERVICE_NAME})
@@ -38,7 +38,7 @@ restart_service_not_running() {
     fi
 }
 
-# Make sure the script is being executed with superuser privileges
+# Execute with superuser privileges
 if [[ "${UID}" -ne 0 ]]
 then
     echo 'Please run with sudo or as root.' >&2
