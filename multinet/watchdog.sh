@@ -12,30 +12,28 @@ LOG_FILE="/vagrant/watchdog.log.${HOSTNAME}"
 PATH="${PATH}:/usr/sbin"
 
 restart_service_not_running() {
-    then
-    if [[ -n "${SERVICE_PID}" ]]
-    # Restarts a given service if it is not running.
-    # Requires SERVICE_NAME and START_SERVICE_COMMAND as arguments.
-    # Returns 0 if SERVICE_NAME is running, 1 if SERVICE_NAME was restarted.
+# Restarts a given service if it is not running.
+# Requires SERVICE_NAME and START_SERVICE_COMMAND as arguments.
+# Returns 0 if SERVICE_NAME is running, 1 if SERVICE_NAME was restarted.
 
-    local SERVICE_NAME="${1}"
-    shift
-    local START_SERVICE_COMMAND="${@}"
+local SERVICE_NAME="${1}"
+shift
+local START_SERVICE_COMMAND="${@}"
 
-    local TIMESTAMP=$(date + '%b %d +%T')
-    echo "${TIMESTAMP} Checking service: ${SERVICE_NAME}" >> ${LOG_FILE}
+local TIMESTAMP=$(date + '%b %d +%T')
+echo "${TIMESTAMP} Checking service: ${SERVICE_NAME}" >> ${LOG_FILE}
 
-    local SERVICE_PID=$(pidof ${SERVICE_NAME})
+local SERVICE_PID=$(pidof ${SERVICE_NAME})
 
-    if [[ -n "${SERVICE_PID}" ]]
-    then
-        echo "${TIMESTAMP} ${SERVICE_NAME} running as PID(s): ${SERVICE_PID}" >> ${LOG_FILE}
-        return 0
-    else
-        echo "${TIMESTAMP} Restarting ${SERVICE_NAME} with command: ${START_SERVICE_COMMAND}" >> ${LOG_FILE}
-        ${START_SERVICE_COMMAND} &>> ${LOG_FILE}
-        return 1
-    fi
+if [[ -n "${SERVICE_PID}" ]]
+then
+    echo "${TIMESTAMP} ${SERVICE_NAME} running as PID(s): ${SERVICE_PID}"
+    return 0
+else
+    echo "${TIMESTAMP} Restarting ${SERVICE_NAME} with command: ${START_SERVICE_COMMAND}" >> ${LOG_FILE}
+    ${START_SERVICE_COMMAND} &>> ${LOG_FILE}
+    return 1
+fi
 }
 
 # Execute with superuser privileges
