@@ -271,3 +271,6 @@ May 03 +19:05:01 httpd running as PID(s): 5937 5936 5935 5934 5933 5932
  Checking service: sshd
  Checking service: rsyslogd
  Checking service: httpd
+ Checking service: sshd
+ Checking service: rsyslogd
+ Checking service: httpd

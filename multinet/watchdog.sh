@@ -20,7 +20,7 @@ local SERVICE_NAME="${1}"
 shift
 local START_SERVICE_COMMAND="${@}"
 
-local TIMESTAMP=$(date + '%b %d +%T')
+local TIMESTAMP=$(date '+ %b %d +%T')
 echo "${TIMESTAMP} Checking service: ${SERVICE_NAME}" >> ${LOG_FILE}
 
 local SERVICE_PID=$(pidof ${SERVICE_NAME})
